@@ -1,0 +1,52 @@
+{
+	"title": "Mails schreiben mit Gmail",
+	"lang": "DE",
+	"author": "Michi",
+  "describtion": "In dieser Anleitung erfährst du wie man Mails mit Gmail schreibt.",
+	"stepsnum": "6",
+	"themeimage": "#",
+  "link": "https://mail.google.com",
+	"steps": [{
+			"stepnr": "1",
+			"type": "1",
+			"text": "Öffne gmail.com und logge dich ein. Wenn du in deinen Browser bereits in deinem Google Konto angemeldet bist, passiert das automatisch.",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "2",
+			"type": "1",
+			"text": "Klicke anschliessend oben links auf den Schreiben Knopf.",
+			"image": "mail001.png",
+			"link": "#"
+		},
+		{
+      "stepnr": "3",
+			"type": "1",
+			"text": "Klicke ins Feld neben An und tippe die E-Mail Adresse des Empfängers ein.",
+			"image": "#",
+			"link": "#"
+		},
+    {
+      "stepnr": "4",
+			"type": "1",
+			"text": "Beim Feld Betreff musst du den Titel, also um was es in deiner Mail geht, eingeben.",
+			"image": "#",
+			"link": "#"
+		},
+    {
+      "stepnr": "5",
+			"type": "1",
+			"text": "Jetzt kannst du unten ins grosse Feld deine Nachricht schreiben.",
+			"image": "#",
+			"link": "#"
+		},
+    {
+      "stepnr": "6",
+			"type": "1",
+			"text": "Wenn du fertig bist, kannst du mit den Knopf senden, deine Mail verschicken. Lies dir am besten den Text nochmals durch bevor du es sendest, um Fehler zu finden.",
+			"image": "#",
+			"link": "#"
+		}
+	]
+}
