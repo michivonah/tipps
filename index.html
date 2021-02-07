@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+         <title>Michi Tipps</title>
+         <meta name="apple-mobile-web-app-title" content="M Tips">
+         <link rel="icon" type="image/png" href="icons/favicon.png">
+         <link rel="shortcut icon" type="image/svg+xml" href="icons/favicon.svg">
+         <link rel="apple-touch-icon" href="icons/favicon.svg" sizes="any">
+         <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" sizes="any">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+         <link rel="stylesheet" type="text/css" href="style.css"/>
+         <script language="javascript" type="text/javascript" src="script.js"></script>
+         <meta charset="UTF-8">
+         <meta name="theme-color" content="#000000">
+         <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+         <meta name="mobile-web-app-capable" content="yes">
+         <meta name="apple-mobile-web-app-capable" content="yes">
+         <link rel="manifest" href="manifest.json">
+         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+         <link rel="preconnect" href="https://fonts.gstatic.com">
+         <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+      <div id="navbar">
+        <p>Michi Tipps</p>
+      </div>
+      <div id="navbar-placeholder"></div>
+
+      <div id="content">
+        <div id="search">
+          <input id="searchfield" type="text" placeholder="Suche nach einer Anleitung...">
+          <button onclick="search()">Anleitung suchen</button>
+          <ul>
+            <p>Alle Anleitungen</p>
+            <li>Mails schreiben mit Gmail</li>
+            <li>QR-Code erstellen</li>
+          </ul>
+        </div>
+        <div id="discover">
+          <h1 id="welcome">Guten Tag</h1>
+          <p>Hier findest du viele Anleitungen rund um Smartphones, Tablets und Computer. Es kommen laufend neue Anleitungen dazu. Um eine Anleitung zu suchen, &ouml;ffne die Suchfunktion mit dem Knopf unten rechts und suche nach der gew&uuml;nschten Anleitung.</p>
+          <h1 style="display:none;">Empfehlungen f&uuml;r dich!</h1>
+          <p style="display:none;">In Zukunft wirst du hier Anleitungen empfohlen bekommen. Diese Funktion muss allerdings zuerst noch entwickelt werden.</p>
+          <h3>Geplante Anleitungen:</h3>
+          <ul>
+            <li>Bilder in Word Dokument einf&uuml;gen</li>
+            <li>Tabelle in Word erstellen</li>
+            <li>Screenshot erstellen am Smartphone</li>
+            <li>WhatsApp am PC verwenden</li>
+            <li>Postkarte versenden mit Postcard Creator</li>
+            <li>Was sind Cookies?</li>
+          </ul>
+          <h3>Werbung, wegen Markennennung.</h3>
+        </div>
+        <div id="guide">
+          <img src="wallpapers/001.jpg" id="theme-img">
+          <h1 id="guide-title">Anleitung nicht gefunden!</h1>
+          <p id="guide-author">Anleitung von User</p>
+          <p id="guide-describtion">Die gew&uuml;nschte Anleitung wurde nicht gefunden. Versuchen sie es mit einem anderen Suchbegriff nochmal.</p>
+          <ol id="guide-steps">
+          </ol>
+          <a href="#" id="guide-link"><button>Link öffnen</button></a>
+        </div>
+        <button id="new" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+      </div>
+
+
+      <script>
+      // Loading
+      $(window).on("load", function(){
+        $("#loading-screen").fadeOut(750);
+        if(window.location.search != ''){
+          var url = window.location.search;
+          var jsonurl = url.replace('?guide=', '');
+          console.log("Load guide from: " + jsonurl);
+          openguide(jsonurl);
+        }
+        else{
+          var jsonurl = "#";
+          document.getElementById("guide").style.display = "none";
+        }
+      });
+
+      function openguide(jsonurl){
+        $.getJSON(jsonurl, function(data) {
+          document.getElementById('theme-img').src = data.themeimage;
+          if(data.themeimage == "#"){
+            document.getElementById('theme-img').src = "wallpapers/001.jpg";
+          }
+          document.getElementById("guide-title").textContent = data.title;
+          document.getElementById("guide-describtion").textContent = data.describtion;
+          document.getElementById("guide-link").href = data.link;
+          var loopcount = 0;
+          while (loopcount < Number(data.stepsnum)) {
+            var nextStep = document.createElement('li');
+            if(data.steps[loopcount].image != "#"){
+              var nextStepImg = document.createElement('img');
+              nextStepImg.src = data.steps[loopcount].image;
+              nextStep.appendChild(document.createTextNode(data.steps[loopcount].text));
+              document.getElementById('guide-steps').append(nextStep, nextStepImg);
+            }
+            else{
+              nextStep.appendChild(document.createTextNode(data.steps[loopcount].text));
+              document.getElementById('guide-steps').append(nextStep);
+            }
+            loopcount++;
+          }
+        });
+        document.getElementById("guide").style.display = "block";
+        document.getElementById("discover").style.display = "none";
+        document.getElementById("search").style.display = "none";
+      }
+
+      function search(){
+        var searchRequest = document.getElementById("searchfield").value;
+        var searchRequest = searchRequest.replace(' ', '-');
+        var searchRequest = searchRequest.replace(' ', '-');
+        var searchRequest = searchRequest.replace(' ', '-');
+        var searchRequest = searchRequest.replace(' ', '-');
+        var searchRequest = searchRequest.replace(' ', '-');
+        var searchRequestJson = "guides/" + searchRequest + ".json";
+        openguide(searchRequestJson);
+      }
+
+      function toggleSearch(){
+        document.getElementById("guide").style.display = "none";
+        document.getElementById("discover").style.display = "none";
+        if(document.getElementById("search").style.display == "block"){
+          document.getElementById("search").style.display = "none";
+          document.getElementById("discover").style.display = "block";
+        }
+        else{
+          document.getElementById("search").style.display = "block";
+        }
+      }
+      </script>
+</body>
+</html>
