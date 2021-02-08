@@ -2,19 +2,18 @@
 <html lang="de">
 <head>
          <title>Michi Tipps</title>
-         <meta name="mobile-web-app-title" content="M Tips">
-         <meta name="apple-mobile-web-app-title" content="M Tips">
-         <link rel="icon" type="image/png" href="icons/favicon.png">
-         <link rel="shortcut icon" type="image/svg+xml" href="icons/favicon.svg">
-         <link rel="apple-touch-icon" href="icons/favicon.svg" sizes="any">
-         <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" sizes="any">
+         <meta name="mobile-web-app-title" content="M Tipps">
+         <meta name="apple-mobile-web-app-title" content="M Tipps">
+         <link rel="icon" type="image/png" href="favicon_blue.png">
+         <link rel="shortcut icon" type="image/png" href="favicon_blue.png">
+         <link rel="apple-touch-icon" href="favicon_blue.png" sizes="any">
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
          <link rel="stylesheet" type="text/css" href="style.css"/>
          <script language="javascript" type="text/javascript" src="script.js"></script>
          <meta charset="UTF-8">
-         <meta name="theme-color" content="#000000">
-         <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+         <meta name="theme-color" content="#3498db">
+         <meta name="apple-mobile-web-app-status-bar-style" content="#3498db">
          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
          <meta name="mobile-web-app-capable" content="yes">
          <meta name="apple-mobile-web-app-capable" content="yes">
@@ -76,9 +75,17 @@
         $("#loading-screen").fadeOut(750);
         if(window.location.search != ''){
           var url = window.location.search;
-          var jsonurl = url.replace('?guide=', '');
-          console.log("Load guide from: " + jsonurl);
-          openguide(jsonurl);
+          var jsonurl = url.replace('?g=', '');
+          var jsonurl = "guides/" + jsonurl;
+          if(jsonurl.includes('.json')){
+            console.log("Load guide from: " + jsonurl);
+            openguide(jsonurl);
+          }
+          else{
+            var jsonurl = jsonurl + ".json";
+            console.log("Load guide from: " + jsonurl);
+            openguide(jsonurl);
+          }
         }
         else{
           var jsonurl = "#";
@@ -90,11 +97,16 @@
         $.getJSON(jsonurl, function(data) {
           document.getElementById('theme-img').src = data.themeimage;
           if(data.themeimage == "#"){
-            document.getElementById('theme-img').src = "wallpapers/001.jpg";
+            var min = 1;
+            var max = 6;
+            var randomnum = Math.round(Math.random() * (max - min)) + min;
+            var themenum = "wallpapers/00" + randomnum + ".jpg";
+            document.getElementById('theme-img').src = themenum;
           }
           document.getElementById("guide-title").textContent = data.title;
           document.getElementById("guide-describtion").textContent = data.describtion;
           document.getElementById("guide-link").href = data.link;
+          $("#guide-steps").empty();
           var loopcount = 0;
           while (loopcount < Number(data.stepsnum)) {
             var nextStep = document.createElement('li');
