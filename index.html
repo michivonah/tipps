@@ -25,7 +25,7 @@
 </head>
 <body>
 
-      <div id="navbar">
+      <div id="navbar" onclick="home()">
         <p>Michi Tipps</p>
       </div>
       <div id="navbar-placeholder"></div>
@@ -42,7 +42,7 @@
         </div>
         <div id="discover">
           <h1 id="welcome">Guten Tag</h1>
-          <p>Hier findest du viele Anleitungen rund um Smartphones, Tablets und Computer. Es kommen laufend neue Anleitungen dazu. Um eine Anleitung zu suchen, &ouml;ffne die Suchfunktion mit dem Knopf unten rechts und suche nach der gew&uuml;nschten Anleitung.</p>
+          <p>Hier findest du viele Anleitungen rund um Smartphones, Tablets und Computer. Es kommen laufend neue Anleitungen dazu. Um eine Anleitung zu suchen, &ouml;ffne die Suchfunktion mit dem Knopf unten rechts und suche nach der gew&uuml;nschten Anleitung. Um wieder hierher zur&uuml;ck zu kommen, tippe oben auf den Titel.</p>
           <h1 style="display:none;">Empfehlungen f&uuml;r dich!</h1>
           <p style="display:none;">In Zukunft wirst du hier Anleitungen empfohlen bekommen. Diese Funktion muss allerdings zuerst noch entwickelt werden.</p>
           <h3>Geplante Anleitungen:</h3>
@@ -135,6 +135,9 @@
         var searchRequest = searchRequest.replace(' ', '-');
         var searchRequest = searchRequest.replace(' ', '-');
         var searchRequest = searchRequest.replace(' ', '-');
+        var searchRequest = searchRequest.toLowerCase().replace('ä', 'ae');
+        var searchRequest = searchRequest.toLowerCase().replace('ö', 'oe');
+        var searchRequest = searchRequest.toLowerCase().replace('ü', 'ue');
         var searchRequestJson = "guides/" + searchRequest + ".json";
         openguide(searchRequestJson.toLowerCase());
       }
@@ -149,6 +152,12 @@
         else{
           document.getElementById("search").style.display = "block";
         }
+      }
+
+      function home(){
+        document.getElementById("guide").style.display = "none";
+        document.getElementById("discover").style.display = "block";
+        document.getElementById("search").style.display = "none";
       }
       </script>
 </body>
