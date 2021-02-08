@@ -1,0 +1,57 @@
+{
+	"title": "Bild in Word Dokument einfügen",
+	"lang": "DE",
+	"author": "Michi",
+  "describtion": "In dieser Anleitung erkläre ich dir, wie man ein Bild in ein Word Dokument einfügt. Du kannst ein Bild auch unter Einfügen > Bild einfügen, einfügen. ",
+	"stepsnum": "7",
+	"themeimage": "#",
+  "link": "#",
+	"steps": [{
+			"stepnr": "1",
+			"type": "1",
+			"text": "Bild im Explorer suchen",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "2",
+			"type": "1",
+			"text": "Bild markieren (anklicken)",
+			"image": "#",
+			"link": "#"
+		},
+		"stepnr": "3",
+			"type": "1",
+			"text": "Rechte Maustaste drücken (Kontextmenü erscheint)",
+			"image": "#",
+			"link": "#"
+		},
+		"stepnr": "4",
+			"type": "1",
+			"text": "Kopieren aus der Liste (Kontextmenü) auswählen",
+			"image": "#",
+			"link": "#"
+		},
+
+"stepnr": "5",
+			"type": "1",
+			"text": "Word Dokument öffnen und gewünschte Stelle für das Bild suchen",
+			"image": "#",
+			"link": "#"
+		},
+
+"stepnr": "6",
+			"type": "1",
+			"text": "Klicke oben links auf den Knopf einfügen",
+			"image": "#",
+			"link": "#"
+		},
+
+"stepnr": "7",
+			"type": "1",
+			"text": "Fertig, jetzt ist das Bild eingefügt",
+			"image": "#",
+			"link": "#"
+		}
+	]
+}
