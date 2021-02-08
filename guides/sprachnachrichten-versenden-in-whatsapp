@@ -1,0 +1,39 @@
+{
+	"title": "Sprachnachrichten versenden in WhatsApp",
+	"lang": "DE",
+	"author": "Michi",
+  "describtion": "In dieser Anleitung erkläre ich dir wie man eine Sprachnachricht in WhatsApp verschickt.",
+	"stepsnum": "4",
+	"themeimage": "#",
+  "link": "#",
+	"steps": [{
+			"stepnr": "1",
+			"type": "1",
+			"text": "Öffne den WhatsApp Chat dem du eine Sprachnachricht senden möchtest.",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "2",
+			"type": "1",
+			"text": "Drücke und halte auf den Mikrofon-Knopf",
+			"image": "#",
+			"link": "#"
+		},
+    {
+      "stepnr": "3",
+			"type": "1",
+			"text": "Während du den Knopf gedrückt hältst, wird aufgezeichnet was du sprichst. ",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "4",
+			"type": "1",
+			"text": "Sobald du den Knopf loslässt wird die Sprachnachricht automatisch losgeschickt. Um dir die Sprachnachricht anzuhören, tippe auf den Playknopf in der Sprachnachricht. ",
+			"image": "#",
+			"link": "#"
+		}
+	]
+}
+
