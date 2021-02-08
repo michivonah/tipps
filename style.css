@@ -102,10 +102,12 @@ body{
 
    #search{
      width: 100%;
-     min-height: 200px;
-     background: #5499c7;
+     min-height: 256px;
+     background: #3498db;
      display: none;
      text-align: left;
+     color: #fff;
+     border-bottom: 8px solid #fff;
    }
 
    #search input{
@@ -125,7 +127,7 @@ body{
    #search button{
      height: auto;
      width: 80%;
-     background: #3498db;
+     background: #5499c7;
      color: #fff;
      border: 2px solid #000;
      border-radius: 8px;
