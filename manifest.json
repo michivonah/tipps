@@ -1,0 +1,32 @@
+{
+  "name": "Michi Tipps",
+  "short_name": "M Tipps",
+  "description": "Eine kleine Website mit Tipps rund um Smartphones, Tablets und Computer.",
+  "lang": "de-DE",
+  "orientation": "any",
+  "theme_color": "#3498db",
+  "background_color": "#3498db",
+  "start_url": "https://michivonah.github.io/tipps/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://michivonah.github.io/tipps/favicon_blue.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://michivonah.github.io/tipps/favicon_black.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://michivonah.github.io/tipps/favicon_black.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://michivonah.github.io/tipps/favicon_blue.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
