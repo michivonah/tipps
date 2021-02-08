@@ -1,0 +1,46 @@
+{
+	"title": "Tabellen erstellen in Word",
+	"lang": "DE",
+	"author": "Michi",
+  "describtion": "In dieser Anleitung erfährst du wie man eine Tabelle in Word erstellt. Wenn du Berechnungen in der Tabelle ausführen möchtest, solltest du allerdings eine Excel Tabelle erstellen. ",
+	"stepsnum": "5",
+	"themeimage": "#",
+  "link": "#",
+	"steps": [{
+			"stepnr": "1",
+			"type": "1",
+			"text": "Öffne das Word Dokument in das die Tabelle soll oder erstelle ein Neues.",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "2",
+			"type": "1",
+			"text": "Tippe oben in der Navigation auf Einfügen",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "3",
+			"type": "1",
+			"text": "Wähle Tabelle und die gewünschte Grösse aus",
+			"image": "#",
+			"link": "#"
+		},
+    {
+      "stepnr": "4",
+			"type": "1",
+			"text": "Jetzt hast du eine Tabelle erstellt, um sie anzupassen wähle im Menu Tabelle (farbig hinterlegt) aus. Dort kannst du das Layout anpassen oder die Farbe eines Feldes ändern. ",
+			"image": "#",
+			"link": "#"
+		},
+    {
+      "stepnr": "5",
+			"type": "1",
+			"text": "Um weitere Spalten und Zeilen hinzufügen, klicke auf der Tastatur auf die Tabulator-Taste oder klicke unter Tabelle auf Zeile darunter einfügen. ",
+			"image": "#",
+			"link": "#"
+		}
+	]
+}
+
