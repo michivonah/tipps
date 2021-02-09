@@ -1,0 +1,39 @@
+{
+	"title": "Screenshots erstellen ",
+	"lang": "DE",
+	"author": "Michi",
+  "describtion": "Screenshots werden nicht auf jedem Smartphone gleich erstellt. Deswegen sind hier verschiedene Möglichkeiten aufgelistet.",
+	"stepsnum": "3",
+	"themeimage": "#",
+  "link": "#",
+	"steps": [{
+			"stepnr": "1",
+			"type": "1",
+			"text": "Bei Smartphones mit Homebutton muss der Ein/Aus-Knopf gleichzeitig mit dem Homebutton gedrückt werden.",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "2",
+			"type": "1",
+			"text": "Wenn dein Android Gerät keinen Homebutton hat, musst du Leiser und den Ein/Aus-Schalter gleichzeitig drücken. ",
+			"image": "#",
+			"link": "#"
+		},
+    {
+      "stepnr": "3",
+			"type": "1",
+			"text": "Wenn du ein iPhone mit FaceID hast, musst du die Lauter-Taste und die Ein/Ausschalt-Taste gleichzeitig drücken um einen Screenshot zu erstellen. ",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "4",
+			"type": "1",
+			"text": "Alternativ kannst du auch über deinen Assistant (Google Assistant oder Siri) einen Screenshot erstellen.",
+			"image": "#",
+			"link": "#"
+		}
+	]
+}
+
