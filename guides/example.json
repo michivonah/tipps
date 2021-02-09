@@ -1,0 +1,32 @@
+{
+	"title": "Beispielanleitung",
+	"lang": "DE",
+	"author": "Michi",
+  "describtion": "Das ist eine Beispielanleitung, die zeigt wie eine Anleitung aussehen kann. Um die Anleitung anzupassen, ändern Sie die Angaben in der JSON-Datei.",
+	"stepsnum": "3",
+	"themeimage": "#",
+  "link": "#",
+	"steps": [{
+			"stepnr": "1",
+			"type": "1",
+			"text": "Dies ist der angezeigte Text beim ersten Schritt.",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "2",
+			"type": "1",
+			"text": "Dies ist der angezeigte Text beim zweiten Schritt.",
+			"image": "#",
+			"link": "#"
+		},
+		{
+      "stepnr": "3",
+			"type": "1",
+			"text": "Dies ist der angezeigte Text beim dritten Schritt.",
+			"image": "#",
+			"link": "#"
+		}
+	]
+}
+
