@@ -10,16 +10,16 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "https://michivonah.github.io/tipps/favicon_blue.png",
+      "src": "https://michivonah.github.io/tipps/favicon_black.png",
       "sizes": "96x96"
     },
     {
-      "src": "https://michivonah.github.io/tipps/favicon_black.png",
+      "src": "https://michivonah.github.io/tipps/favicon_blue.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "https://michivonah.github.io/tipps/favicon_black.png",
+      "src": "https://michivonah.github.io/tipps/favicon_blue.png",
       "sizes": "192x192",
       "type": "image/png"
     },
