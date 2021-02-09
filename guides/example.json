@@ -2,10 +2,10 @@
 	"title": "Beispielanleitung",
 	"lang": "DE",
 	"author": "Michi",
-  "describtion": "Das ist eine Beispielanleitung, die zeigt wie eine Anleitung aussehen kann. Um die Anleitung anzupassen, ändern Sie die Angaben in der JSON-Datei.",
+  "describtion": "Das ist eine Beispielanleitung, die zeigt wie eine Anleitung aussehen kann. Um die Anleitung anzupassen, ändern Sie die Angaben in der JSON-Datei. Wenn sie eine eigene Anleitung erstellen wollen, können sie dieses Beispieldatei über den Link unten herunterladen.",
 	"stepsnum": "3",
 	"themeimage": "#",
-  "link": "#",
+  "link": "https://github.com/michivonah/tipps/blob/main/guides/example.json",
 	"steps": [{
 			"stepnr": "1",
 			"type": "1",
