@@ -46,19 +46,32 @@
         <div id="discover">
           <h1 id="welcome">Guten Tag</h1>
           <p>Hier findest du viele Anleitungen rund um Smartphones, Tablets und Computer. Es kommen laufend neue Anleitungen dazu. Um eine Anleitung zu suchen, &ouml;ffne die Suchfunktion mit dem Knopf unten rechts und suche nach der gew&uuml;nschten Anleitung. Um wieder hierher zur&uuml;ck zu kommen, tippe oben auf den Titel.</p>
-          <h1 style="display:none;">Empfehlungen f&uuml;r dich!</h1>
-          <p style="display:none;">In Zukunft wirst du hier Anleitungen empfohlen bekommen. Diese Funktion muss allerdings zuerst noch entwickelt werden.</p>
-          <h3>Geplante Anleitungen:</h3>
-          <ul>
-            <li>Screenshot erstellen am Smartphone</li>
-            <li>WhatsApp am PC verwenden</li>
-            <li>Postkarte versenden mit Postcard Creator</li>
-            <li>Ordner erstellen unter Windows 10</li>
-            <li><a href="https://bit.ly/3o8B0FX">SwissCovid</a> App herunterladen und einrichten</li>
-            <li>Navigieren mit Google Maps</li>
-          </ul>
+          <div id="recommendations">
+            <h1>Empfehlungen f&uuml;r dich!</h1>
+            <div class="recommendation">
+              <h3>Tabellen erstellen in Word</h3>
+              <p>In dieser Anleitung erf&auml;hrst du wie man einfache Tabellen in Word erstellt.</p>
+              <button onclick="openguide('guides/tabellen-erstellen-in-word.json')">Anleitung ansehen</button>
+            </div>
+            <div class="recommendation">
+              <h3>Sprachnachrichten versenden mit WhatsApp</h3>
+              <p>Hier erf&auml;hrst du, wie man Sprachnachrichten in WhatsApp versendet.</p>
+              <button onclick="openguide('guides/sprachnachrichten-versenden-in-whatsapp.json')">Anleitung ansehen</button>
+            </div>
+          </div>
+          <div id="planned-guides">
+            <h3>Geplante Anleitungen:</h3>
+            <ul>
+              <li>Screenshot erstellen am Smartphone</li>
+              <li>WhatsApp am PC verwenden</li>
+              <li>Postkarte versenden mit Postcard Creator</li>
+              <li>Ordner erstellen unter Windows 10</li>
+              <li><a href="https://bit.ly/3o8B0FX">SwissCovid</a> App herunterladen und einrichten</li>
+              <li>Navigieren mit Google Maps</li>
+            </ul>
+          </div>
           <h3>Werbung, wegen Markennennung.</h3>
-          <p>Version 1.1.2, 08.02.2021</p>
+          <p>Version 1.2.0, 09.02.2021</p>
         </div>
         <div id="guide">
           <img src="wallpapers/001.jpg" id="theme-img">
@@ -70,12 +83,16 @@
           <a href="#" id="guide-link"><button>Link öffnen</button></a>
         </div>
         <button id="new" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+        <img id="bitmoji" src="bitmoji/1.png">
       </div>
 
 
       <script>
       // Loading
       $(window).on("load", function(){
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+          darkmode();
+        }
         $("#loading-screen").fadeOut(750);
         if(window.location.search != ''){
           var url = window.location.search;
@@ -95,6 +112,10 @@
           var jsonurl = "#";
           document.getElementById("guide").style.display = "none";
         }
+        if(localStorage.getItem('username') != null){
+          document.getElementById("welcome").textContent = "Willkommen zurück " + localStorage.getItem('username') + "!";
+          console.log("Welcome " + localStorage.getItem('username'));
+        }
       });
 
       function openguide(jsonurl){
@@ -110,6 +131,9 @@
           document.getElementById("guide-title").textContent = data.title;
           document.getElementById("guide-describtion").textContent = data.describtion;
           document.getElementById("guide-link").href = data.link;
+          if(data.link == "#"){
+            document.getElementById("guide-link").style.display = "none";
+          }
           $("#guide-steps").empty();
           var loopcount = 0;
           while (loopcount < Number(data.stepsnum)) {
@@ -149,12 +173,17 @@
       function toggleSearch(){
         document.getElementById("guide").style.display = "none";
         document.getElementById("discover").style.display = "none";
+        document.getElementById("bitmoji").style.display = "none";
         if(document.getElementById("search").style.display == "block"){
           document.getElementById("search").style.display = "none";
           document.getElementById("discover").style.display = "block";
         }
         else{
           document.getElementById("search").style.display = "block";
+          var randombitmoji = Math.round(Math.random() * (6 - 1)) + 1;
+          var bitmojisrc = "bitmoji/" + randombitmoji + ".png";
+          document.getElementById('bitmoji').src = bitmojisrc;
+          document.getElementById("bitmoji").style.display = "block";
         }
       }
 
@@ -162,6 +191,12 @@
         document.getElementById("guide").style.display = "none";
         document.getElementById("discover").style.display = "block";
         document.getElementById("search").style.display = "none";
+      }
+
+      function darkmode(){
+        document.body.style.background = "#181818";
+        document.body.style.color = "#fff";
+        console.log("Darkmode activated")
       }
       </script>
 </body>
