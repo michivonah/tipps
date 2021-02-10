@@ -13,6 +13,7 @@
          <script language="javascript" type="text/javascript" src="script.js"></script>
          <meta charset="UTF-8">
          <meta name="theme-color" content="#3498db">
+         <meta name="mobile-web-app-status-bar-style" content="#3498db">
          <meta name="apple-mobile-web-app-status-bar-style" content="#3498db">
          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
          <meta name="mobile-web-app-capable" content="yes">
@@ -71,7 +72,7 @@
             </ul>
           </div>
           <h3>Werbung, wegen Markennennung.</h3>
-          <p>Version 1.2.0, 09.02.2021</p>
+          <p>Version 1.2.1, 10.02.2021, <a href="https://github.com/michivonah/tipps">Github</a></p>
         </div>
         <div id="guide">
           <img src="wallpapers/001.jpg" id="theme-img">
@@ -90,7 +91,7 @@
       <script>
       // Loading
       $(window).on("load", function(){
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('darkmode') == "true"){
           darkmode();
         }
         $("#loading-screen").fadeOut(750);
@@ -133,6 +134,9 @@
           document.getElementById("guide-link").href = data.link;
           if(data.link == "#"){
             document.getElementById("guide-link").style.display = "none";
+          }
+          else{
+            document.getElementById("guide-link").style.display = "block";
           }
           $("#guide-steps").empty();
           var loopcount = 0;
@@ -183,7 +187,7 @@
           var randombitmoji = Math.round(Math.random() * (6 - 1)) + 1;
           var bitmojisrc = "bitmoji/" + randombitmoji + ".png";
           document.getElementById('bitmoji').src = bitmojisrc;
-          document.getElementById("bitmoji").style.display = "block";
+          document.getElementById("bitmoji").style.display = "none";
         }
       }
 
@@ -198,6 +202,12 @@
         document.body.style.color = "#fff";
         console.log("Darkmode activated")
       }
+
+      $("#searchfield").on("keyup", function(e){
+        if(e.keyCode == 13){
+          search();
+        }
+      });
       </script>
 </body>
 </html>
