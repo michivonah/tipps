@@ -72,7 +72,7 @@
             </ul>
           </div>
           <h3>Werbung, wegen Markennennung.</h3>
-          <p>Version 1.2.1, 10.02.2021, <a href="https://github.com/michivonah/tipps">Github</a></p>
+          <p>Version 1.2.2, 10.02.2021, <a href="https://github.com/michivonah/tipps">Github</a></p>
         </div>
         <div id="guide">
           <img src="wallpapers/001.jpg" id="theme-img">
@@ -162,16 +162,38 @@
 
       function search(){
         var searchRequest = document.getElementById("searchfield").value;
-        var searchRequest = searchRequest.replace(' ', '-');
-        var searchRequest = searchRequest.replace(' ', '-');
-        var searchRequest = searchRequest.replace(' ', '-');
-        var searchRequest = searchRequest.replace(' ', '-');
-        var searchRequest = searchRequest.replace(' ', '-');
-        var searchRequest = searchRequest.toLowerCase().replace('ä', 'ae');
-        var searchRequest = searchRequest.toLowerCase().replace('ö', 'oe');
-        var searchRequest = searchRequest.toLowerCase().replace('ü', 'ue');
-        var searchRequestJson = "guides/" + searchRequest + ".json";
-        openguide(searchRequestJson.toLowerCase());
+        if(searchRequest.toUpperCase().includes('MAIL') && searchRequest.toUpperCase().includes('SCHREIBEN')){
+          openguide("guides/mails-schreiben-mit-gmail.json");
+        }
+        else if(searchRequest.toUpperCase().includes('QR') && searchRequest.toUpperCase().includes('CODE') && searchRequest.toUpperCase().includes('ERSTELLEN')){
+          openguide("guides/qrcode-erstellen.json");
+        }
+        else if(searchRequest.toUpperCase().includes('WHATSAPP') && searchRequest.toUpperCase().includes('PROFILBILD')){
+          openguide("guides/whatsapp-profilbild-aendern.json");
+        }
+        else if(searchRequest.toUpperCase().includes('COOKIE')){
+          openguide("guides/was-sind-cookies.json");
+        }
+        else if(searchRequest.toUpperCase().includes('WHATSAPP') && searchRequest.toUpperCase().includes('SPRACHNACHRICHT')){
+          openguide("guides/sprachnachrichten-versenden-in-whatsapp.json");
+        }
+        else if(searchRequest.toUpperCase().includes('SCREENSHOT')){
+          openguide("guides/screenshots-erstellen.json");
+        }
+        else if(searchRequest.toUpperCase().includes('BILD') && searchRequest.toUpperCase().includes('WORD')){
+          openguide("guides/bild-in-word-dokument-einfuegen.json");
+        }
+        else if(searchRequest.toUpperCase().includes('TABELLE') && searchRequest.toUpperCase().includes('WORD')){
+          openguide("guides/tabellen-erstellen-in-word.json");
+        }
+        else{
+          var searchRequest = searchRequest.split(' ').join('-');
+          var searchRequest = searchRequest.toLowerCase().replace('ä', 'ae');
+          var searchRequest = searchRequest.toLowerCase().replace('ö', 'oe');
+          var searchRequest = searchRequest.toLowerCase().replace('ü', 'ue');
+          var searchRequestJson = "guides/" + searchRequest + ".json";
+          openguide(searchRequestJson.toLowerCase());
+        }
       }
 
       function toggleSearch(){
