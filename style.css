@@ -52,6 +52,24 @@ body{
      z-index: 800;
    }
 
+   #create{
+     height: 56px;
+     width: 56px;
+     font-size: 24px;
+     border: none;
+     border-radius: 50%;
+     margin: 20px;
+     left: 0;
+     bottom: 0;
+     color: #fff;
+     background: #3498db;
+     float: right;
+     position: fixed;
+     outline: none;
+     z-index: 800;
+     display: none;
+   }
+
    #guide{
      width: 100%;
      display: none;
@@ -110,6 +128,7 @@ body{
      text-align: left;
      color: #fff;
      border-bottom: 8px solid #fff;
+     user-select: none;
    }
 
    #search input{
@@ -140,6 +159,58 @@ body{
    }
 
    #search button:hover{
+     background: #3498db;
+   }
+
+   #create-own{
+     width: 100%;
+     user-select: auto;
+   }
+
+   #create-own input{
+     height: auto;
+     width: 80%;
+     background: #fff;
+     color: #000;
+     border: 2px solid #000;
+     border-radius: 8px;
+     font-size: 22px;
+     margin: 10px;
+     margin-left: 10%;
+     outline: none;
+     text-align: left;
+   }
+
+   #create-own textarea{
+     height: auto;
+     min-height: 200px;
+     width: 80%;
+     background: #fff;
+     color: #000;
+     border: 2px solid #000;
+     border-radius: 8px;
+     margin: 10px;
+     margin-left: 10%;
+     outline: none;
+     text-align: left;
+     resize: vertical;
+     font-family: 'Source Code Pro', monospace;
+   }
+
+   #create-own button{
+     height: auto;
+     width: 80%;
+     background: #5499c7;
+     color: #fff;
+     border: 2px solid #000;
+     border-radius: 8px;
+     font-size: 22px;
+     margin: 10px;
+     margin-left: 10%;
+     outline: none;
+   }
+
+   #create-own button:hover{
      background: #3498db;
    }
 
@@ -204,6 +275,9 @@ body{
      color: inherit;
      text-decoration: underline;
    }
+
+   ::selection {background: #5499c7; color: #ffffff;}
+   ::-moz-selection {background: #5499c7; color: #ffffff;}
 
 
    @keyframes loading{
