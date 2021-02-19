@@ -6,7 +6,7 @@
   "orientation": "any",
   "theme_color": "#3498db",
   "background_color": "#3498db",
-  "start_url": "https://michivonah.github.io/tipps/",
+  "start_url": "https://tipps.michivonah.ch/",
   "display": "standalone",
   "icons": [
     {
